@@ -9,12 +9,23 @@ def batch_badge_creator(l):
     batch = [badge_maker(name) for name in l]
     return batch
 
-def assign_rooms(l):
-    message = f"Hello, {name}! You'll be assigned to room {index}!"
+# Return a new list of strings representing room assignments in the form of: "Hello, _____! You'll be assigned to room _____!"
 
-    assigned = [message for name , index in l]
+def assign_rooms(names):
+   message = lambda name, index: f"Hello, {name}! You'll be assigned to room {index}!"
 
-    print(assigned)
+   assigned = [message(name, index+1) for index, name in enumerate(names)]
 
-assign_rooms(["Arel", "Carol"])
+   return assigned
+
+# Now you have to tell the printer what to print. Create a function called printer() that will output first the results of the batch_badge_creator() function, and then the output of the assign_rooms() function, to the screen.
+
+def printer(l):
+   joined = batch_badge_creator(l) + assign_rooms(l)
+
+   for i in joined:
+        print(i)
+
+printer(["Arel", "Carol"])
+
 
