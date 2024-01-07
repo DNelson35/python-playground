@@ -17,10 +17,28 @@ def summon_captain_planet(l):
 
     print(refact)
 
+def long_planeteer_calls(l):
+    for i in l:
+        if(len(i) > 4 ):
+            print("True")
+            return
+    
+    print("False")
 
 
+# def find_the_cheese(l): => prints true or false
+#     cheeses = ["cheddar", "gouda", "camembert"]
+#     ans = any(cheese in l for cheese in cheeses)
+#     print(ans)
 
 
+def find_the_cheese(foods):
+    cheeses = ["cheddar", "gouda", "camembert"]
+    for food in foods:
+        if food in cheeses:
+            print(food)
+
+    return None
 
 
-
+find_the_cheese(['carrot', 'potato', 'gouda'])
