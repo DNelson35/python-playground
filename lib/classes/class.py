@@ -1,26 +1,31 @@
 class Dog:
-    
-    def bark(self):
-        print("Woof!")
+    def __init__(self, name="Mutt", breed="Mutt"):
+        self.name = name
+        self.breed = breed
 
     def sit(self):
-        print("The dog is sitting")
+        print(f"{self.name} is sitting down good dog")
+
+    def ped(self):
+        print(f"it is know that this {self.breed} is a good breed of pup")
 
 
 class Person:
-
-    def talk(self):
-        print("Hello world!")
+    def __init__(self, name):
+        self.name = name
     
-    def walk(self):
-        print("the person is walking")
-        
+    def greet(self):
+        if(self.name):
+            print(f"Hi, my name is {self.name}")
+        else:
+            print(f"I have amnesia")
+    
 
-fido = Dog()
-damien = Person()
 
-print(fido.bark())
-print(fido.sit())
-print(damien.talk())
-print(damien.walk())
+Damien = Person("Damien")
 
+Damien.greet()
+
+Everest = Dog("Everest")
+Everest.sit()
+Everest.ped()
