@@ -1,3 +1,4 @@
+#  lab using things learned from class.py
 class Book:
 
     def __init__(self, title, page_count):
