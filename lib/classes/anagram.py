@@ -1,3 +1,4 @@
+# code challenge figure out how to make a class that takes a string and finds an anagram with a match method
 class Anagram:
 
     def __init__(self, word):
