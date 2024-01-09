@@ -1,3 +1,4 @@
+# for setting up a class learing how to initialize use setter getter methods as well as use self
 class Dog:
     def __init__(self, name="Mutt", breed="Mutt"):
         self.name = name
