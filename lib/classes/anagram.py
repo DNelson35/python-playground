@@ -15,4 +15,12 @@ class Anagram:
             
 
 listen = Anagram("listen")
-listen.match(["listen", "silent", "hippopotamus"])
+listen.match(["listen", "silent", "hippopotamus"])  
+print("hello world")
+
+# how to use a lambda function which is  really cool and
+# obj = {  
+#     "noodle": lambda n: n + 1
+# }
+
+# print(obj["noodle"](1))
