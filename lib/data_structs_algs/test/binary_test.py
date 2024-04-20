@@ -3,6 +3,7 @@
 import sys
 import importlib
 import os
+import time
 
 
 if len(sys.argv) < 2:
@@ -26,10 +27,7 @@ module = importlib.import_module(module_name)
 
 
 
-
-
-# # common test
-
+# common test
 test_arr = [13,11,12,7,4,3,1,0]
 tests = []
 
@@ -114,15 +112,26 @@ tests.append({
     'output': 2
 })
 
+# large test
+tests.append({
+    'input': {
+        'arr': list(range(10000000, 0, -1)),
+        'num': 2
+    },
+    'output': 9999998
+})
+
 
 for index, test in enumerate(tests):
+
+    start_time = time.time()
     if module_name == 'binary_search':
-        result = module.binary_search(**test['input'])
+        result = module.locate_num(**test['input'])
     else:
         result = module.linear_search(**test['input'])
 
     if result == test['output']:
-        print(f"\033[92mPass on test {index}\nexpected {test['output']} got {result}\n\033[0m")
+        print(f"\033[92mPass on test {index}\nexpected {test['output']} got {result}\ntime: {(time.time() - start_time) * 1000:.4f}m \n\033[0m")
     else:
-        print(f"\033[91mFailure in test {index}\n{tests[index]}\nactual {result} != expected {test['output']}\n\033[0m")
+        print(f"\033[91mFailure in test {index}\n{tests[index]}\nactual {result} != expected {test['output']}\033[0m")
 
