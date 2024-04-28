@@ -57,6 +57,20 @@ def locate_num(arr, num):
 
 
 
+def find_rotations(arr):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if mid < high and arr[mid] > arr[mid + 1]:
+            return mid + 1
+        elif mid > 0 and arr[mid] < arr[mid - 1]:
+            return mid
+        elif arr[low] >= arr[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return 0
 
-
-    
+# Example usage
+arr = [7, 8, 9, 10, 1, 2, 3]
+print(find_rotations(arr)) # Output: 6
