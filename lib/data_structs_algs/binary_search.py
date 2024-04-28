@@ -72,5 +72,5 @@ def find_rotations(arr):
     return 0
 
 # Example usage
-arr = [7, 8, 9, 10, 1, 2, 3]
+arr = [5, 6, 7, 8, 9, 10, 1, 2, 3]
 print(find_rotations(arr)) # Output: 6
